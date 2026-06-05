@@ -1,0 +1,130 @@
+body{
+    font-family: Arial;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.container{
+    width: 700px;
+    margin: 50px auto;
+}
+
+input,
+select{
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+button{
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+li{
+    list-style: none;
+    margin: 10px auto;
+    padding: 15px;
+    width: 400px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+small{
+    color: gray;
+}
+
+.completed{
+    opacity: 0.6;
+    text-decoration: line-through;
+    
+}
+
+.dark{
+    background-color: #121212;
+    color: white;
+}
+
+.dark li{
+    background: #2a2a2a;
+}
+
+.dark input,
+.dark select{
+    background: #333;
+    color: white;
+    
+}
+
+.dark button{
+    background: #444;
+    color: white;
+}
+.dark .container{
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overdue{
+    border-left: 5px solid red;
+}
+
+progress{
+    width: 350px;
+    height: 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+.filter-btns button{
+    margin: 5px;
+}
+
+#priority{
+    width: 120px;
+}
+li{
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+li {
+    animation: fadeIn 0.4s ease;
+}
+
+button {
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+li {
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateX(-3px);
+}
+body,
+li,
+input,
+select,
+button {
+    transition: all 0.3s ease;
+}
