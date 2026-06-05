@@ -3,18 +3,19 @@ function addTask() {
 
     let taskInput = document.getElementById("taskInput");
     let dueDateInput = document.getElementById("dueDate");
+    let dueTime = document.getElementById("dueTime").value;
    
 
     let taskText = taskInput.value.trim();
     let dueDate = dueDateInput.value;
-     let priorityInput = document.getElementById("priority").value;
+    let priorityInput = document.getElementById("priority").value;
 
     if (taskText === "") {
         alert("Please enter a task");
         return;
     }
 
-    createTask(taskText, dueDate, priorityInput, false);
+    createTask(taskText, dueDate, dueTime, priorityInput, false);
 
     saveTasks();
     updateTaskCount();
@@ -25,7 +26,7 @@ function addTask() {
 }
 
 // Create Task
-function createTask(taskText, dueDate,priority, completed) {
+function createTask(taskText, dueDate, dueTime, priority, completed) {
 
     let li = document.createElement("li");
 
@@ -33,7 +34,8 @@ function createTask(taskText, dueDate,priority, completed) {
         <span>
            <strong> ${taskText}</strong><br>
            <small>Priority: ${priority}</small><br>
-            <small>Due: ${dueDate || "No Date"}</small>
+           <small>Due: ${dueDate || "No Date"} ${dueTime}</small>
+        
         </span>
 
         <button onclick="completeTask(this)">✔</button>
@@ -100,6 +102,7 @@ function saveTasks() {
             text: li.querySelector("strong").textContent,
             priority: priorityText,
             dueDate: dueDateText,
+            
             completed: li.classList.contains("completed")
         });
 
@@ -120,6 +123,7 @@ function loadTasks() {
         createTask(
             task.text,
             task.dueDate,
+            task.dueTime,
             task.priority,
             task.completed
         );
