@@ -128,3 +128,13 @@ select,
 button {
     transition: all 0.3s ease;
 }
+footer{
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.dark footer{
+    color: lightgray;
+}
